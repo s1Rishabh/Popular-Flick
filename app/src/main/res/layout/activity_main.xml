@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="com.example.android.popularflicks.MainActivity"
+    tools:ignore="Overdraw">
+
+    <!--Displays RecyclerView containing the movie list-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="6dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_favourites_empty_view_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <!--Displays "No Favourites Yet." if there are no favourites-->
+        <TextView
+            android:id="@+id/tv_favourites_empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="16dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Widget.ActionMode.Title"
+            android:textSize="26sp"
+            android:text="@string/favourites_empty_view"
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+
+        <!--Button to load popular movies if the favourites view is empty-->
+        <Button
+            android:id="@+id/button_load_popular_movies"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/load_popular_movies" />
+    </LinearLayout>
+    <!--Displays error message if movie data is not obtained correctly-->
+    <TextView
+        android:id="@+id/tv_error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="16dp"
+        android:text="@string/error_fetching_data"
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Widget.ActionMode.Title"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        android:visibility="invisible" />
+
+    <!--Displays network error message if internet access is not available-->
+    <TextView
+        android:id="@+id/tv_network_error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="16dp"
+        android:text="@string/network_error"
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Widget.ActionMode.Title"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        android:visibility="invisible" />
+
+    <!--Displays loading indicator-->
+    <ProgressBar
+        android:id="@+id/pb_loading_indicator"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:visibility="invisible" />
+</FrameLayout>

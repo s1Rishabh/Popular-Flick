@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/detail_scroll_view"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:ignore="Overdraw">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="com.example.android.popularflicks.DetailActivity">
+
+        <!--Poster of the movie-->
+        <ImageView
+            android:id="@+id/iv_detail_poster"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:contentDescription="@string/image_description"
+            android:padding="8dp"
+            android:scaleType="fitCenter" />
+
+        <!--Title of the movie-->
+        <TextView
+            android:id="@+id/tv_detail_title"
+            style="@style/DetailActivityTextViews"
+            android:layout_gravity="center"
+            android:layout_toEndOf="@id/iv_detail_poster"
+            android:layout_toRightOf="@id/iv_detail_poster"
+            android:padding="16dp"
+            android:textSize="32sp" />
+
+        <!--User rating of the movie-->
+        <TextView
+            android:id="@+id/tv_detail_user_rating"
+            style="@style/DetailActivityTextViews"
+            android:layout_below="@id/tv_detail_title"
+            android:layout_toEndOf="@+id/tv_detail_user_rating_key"
+            android:layout_toRightOf="@id/tv_detail_user_rating_key"
+            android:padding="16dp"
+            android:textSize="28sp" />
+
+        <!--Displays "User Rating" before the user rating value-->
+        <TextView
+            android:id="@id/tv_detail_user_rating_key"
+            style="@style/DetailActivityTextViews"
+            android:layout_below="@id/tv_detail_title"
+            android:layout_toEndOf="@id/iv_detail_poster"
+            android:layout_toRightOf="@id/iv_detail_poster"
+            android:paddingBottom="22dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="22dp"
+            android:text="@string/user_rating"
+            android:textSize="16sp" />
+
+        <!--Displays "Release Date" before the value of the release date-->
+        <TextView
+            android:id="@+id/tv_detail_release_date_key"
+            style="@style/DetailActivityTextViews"
+            android:layout_below="@id/iv_detail_poster"
+            android:padding="20dp"
+            android:text="@string/release_date"
+            android:textSize="16sp" />
+
+        <!--Displays the release data-->
+        <TextView
+            android:id="@+id/tv_detail_release_date"
+            style="@style/DetailActivityTextViews"
+            android:layout_below="@id/iv_detail_poster"
+            android:layout_toEndOf="@id/tv_detail_release_date_key"
+            android:layout_toRightOf="@id/tv_detail_release_date_key"
+            android:padding="16dp"
+            android:textSize="22sp" />
+
+        <!--Displays synopsis of the movie-->
+        <TextView
+            android:id="@+id/tv_detail_synopsis"
+            style="@style/DetailActivityTextViews"
+            android:layout_below="@id/tv_detail_release_date"
+            android:padding="16dp"
+            android:textSize="20sp" />
+
+        <!--Divider for better UI-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/tv_detail_synopsis"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@android:color/white" />
+
+        <FrameLayout
+            android:id="@+id/frame_reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_detail_synopsis">
+
+            <!--Loading indicator while reviews and trailers are loaded-->
+            <ProgressBar
+                android:id="@+id/pb_detail_review_loading_indicator"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:visibility="invisible" />
+
+             <!--Displays "Read Reviews" followed by count of reviews-->
+            <TextView
+                android:id="@+id/tv_detail_review"
+                style="@style/DetailActivityTextViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:padding="16dp"
+                android:textSize="20sp" />
+        </FrameLayout>
+
+        <!--Divider for better UI-->
+        <View
+            android:id="@+id/white_line_below_read_reviews"
+            android:layout_below="@id/frame_reviews"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+
+        <!--Displays "Watch:" for trailers-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/trailer_watch"
+            android:padding="16dp"
+            android:visibility="gone"
+            android:layout_below="@id/white_line_below_read_reviews"
+            style="@style/DetailActivityTextViews"
+            android:id="@+id/tv_detail_watch_label"/>
+
+
+        <!--Displays a list of trailers-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_detail_trailer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_detail_watch_label" />
+    </RelativeLayout>
+</ScrollView>

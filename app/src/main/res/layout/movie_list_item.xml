@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="170dp"
+    android:layout_height="250dp"
+    android:orientation="vertical">
+
+    <!--Displays poster of the movie-->
+    <ImageView
+        android:id="@+id/iv_main_poster"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/image_description"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:id="@+id/ll_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/white_line"
+        android:background="@android:color/black"
+        android:orientation="horizontal">
+
+        <!--Displays title of the movie-->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:textAlignment="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Widget.ActionMode.Title"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <FrameLayout
+            android:layout_width="0px"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <!--Displays star which contains the user rating-->
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:contentDescription="@string/image_star_description"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_star_white_24dp" />
+
+            <!--Displays user rating of the movie-->
+            <TextView
+                android:id="@+id/tv_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="2dp"
+                android:textAlignment="center"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Widget.ActionMode.Title"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!--Displays a white line below the movie details-->
+    <View
+        android:id="@id/white_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#dadada" />
+
+
+</RelativeLayout>

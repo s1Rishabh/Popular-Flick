@@ -1,0 +1,57 @@
+<resources>
+    <!--Title of the app-->
+    <string name="app_name">Popular Flicks</string>
+
+    <!--Error message to be displayed when data is not received from the query-->
+    <string name="error_fetching_data">Error fetching data. Please try again</string>
+
+    <!--Error message to be displayed when there is no internet-->
+    <string name="network_error">No Internet Connection.</string>
+
+    <!--Menu action to specify sort order of the list of movies-->
+    <string name="action_sort">Sort By</string>
+
+    <!--Sort by Popularity option in the menu-->
+    <string name="order_by_popularity_label">Popularity</string>
+
+    <!--Sort by Rating option in the menu-->
+    <string name="order_by_rating_label">Rating</string>
+
+    <!--Precedes the user rating of the movie-->
+    <string name="user_rating">User Rating:</string>
+
+    <!--Precedes the release data of the movie-->
+    <string name="release_date">Release Date:</string>
+
+    <!--Description of the movie poster-->
+    <string name="image_description">Movie Poster</string>
+
+    <!--Description of the star behind the user rating-->
+    <string name="image_star_description">Movie Rating Star</string>
+
+    <!--Favourite action-->
+    <string name="action_favourite">Favourite</string>
+
+    <!--String for Toast to be displayed when added to favourites-->
+    <string name="added_to_favourites">Added to favourites</string>
+
+    <!--String for Toast to be displayed when removed from favourites-->
+    <string name="removed_from_favourites">Removed from favourites</string>
+
+    <!--Label for order by favourites-->
+    <string name="order_by_favourites_label">Favourites</string>
+
+    <!--String for Read Reviews View-->
+    <string name="read_reviews">Read Reviews (%d)</string>
+
+    <!--Label for the author of the review-->
+    <string name="review_author_label">Author: %s</string>
+
+    <!--"Watch" label for trailers-->
+    <string name="trailer_watch">Watch:</string>
+
+    <!--Favourites empty view strings-->
+    <string name="favourites_empty_view">No Favourites Yet.</string>
+    <string name="load_popular_movies">Load Popular Movies</string>
+
+</resources>
